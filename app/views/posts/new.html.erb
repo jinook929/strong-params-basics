@@ -1,9 +1,15 @@
-<%= form_for(@post) do |f| %>
-  <label>Post title:</label><br>
-  <%= f.text_field :title %><br>
+<h1>New Post</h1>
 
-  <label>Post Description</label><br>
+<%= form_for(@post) do |f| %>
+  <!--<label>Post title:</label><br>-->
+  <%= f.label "Title:", for: "post_title" %><br>
+  <%= f.text_field :title, autofocus: true %><br>
+
+  <!--<label>Post Description</label><br>-->
+  <%= f.label "Description:", for: "post_description" %><br>
   <%= f.text_area :description %><br>
 
   <%= f.submit %>
 <% end %>
+
+<%= link_to "Back", posts_path %>
